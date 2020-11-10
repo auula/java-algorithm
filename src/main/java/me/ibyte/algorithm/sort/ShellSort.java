@@ -3,7 +3,7 @@ package me.ibyte.algorithm.sort;
 
 import me.ibyte.algorithm.Sort;
 
-import java.util.Arrays;
+
 
 public class ShellSort implements Sort {
 
@@ -21,7 +21,7 @@ public class ShellSort implements Sort {
                 arr[pervIndex + gap] = current;
             }
         }
-        return Arrays.copyOfRange(arr,0,arr.length);
+        return arr;
     }
     
 }

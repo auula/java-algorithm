@@ -1,3 +1,5 @@
+package me.ibyte.algorithm.sort;
+
 import me.ibyte.algorithm.Sort;
 import me.ibyte.algorithm.sort.MergeSort;
 import org.junit.Test;

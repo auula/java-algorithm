@@ -11,37 +11,24 @@ public class QuickSort implements Sort {
         return quickSort(arr,0,arr.length-1);
     }
 
-    private int partition(Integer[] arr, int left, int right) {
-        int temp = arr[left];
-        while (right > left) {
-            // 先判断基准数和后面的数依次比较
-            while (temp <= arr[right] && left < right) {
-                --right;
-            }
-            // 当基准数大于了 arr[right]，则填坑
-            if (left < right) {
-                arr[left] = arr[right];
-                ++left;
-            }
-            // 现在是 arr[right] 需要填坑了
-            while (temp >= arr[left] && left < right) {
-                ++left;
-            }
-            if (left < right) {
-                arr[right] = arr[left];
-                --right;
-            }
-        }
-        arr[left] = temp;
-        return left;
-    }
-
     private  Integer[] quickSort(Integer[] arr, int left, int right) {
-        if (arr == null || left >= right || arr.length <= 1)
-            return null;
-        int mid = partition(arr, left, right);
-        quickSort(arr, left, mid);
-        quickSort(arr, mid + 1, right);
+        if (left >= right) {
+            return arr;
+        }
+        int pivot = arr[left],L=left,R=right;
+        while(left < right){
+            while (left < right && arr[right] >= pivot){
+                right--;
+            }
+            arr[left] = arr[right];
+            while(left < right && arr[left] <= pivot){
+                left++;
+            }
+            arr[right] = arr[left];
+        }
+        arr[left] = pivot;
+        quickSort(arr,L,right-1);
+        quickSort(arr,right+1,R);
         return  arr;
     }
 

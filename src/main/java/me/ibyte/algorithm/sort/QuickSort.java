@@ -6,6 +6,14 @@ import me.ibyte.algorithm.Sort;
 
 // https://www.bilibili.com/video/BV1at411T75o?zw
 public class QuickSort implements Sort {
+    String str = "____                        __                      \n" +
+            "/\\  _`\\                     /\\ \\                     \n" +
+            "\\ \\ \\L\\ \\    ___     ___ ___\\ \\ \\____     __   _ __  \n" +
+            " \\ \\  _ <'  / __`\\ /' __` __`\\ \\ '__`\\  /'__`\\/\\`'__\\\n" +
+            "  \\ \\ \\L\\ \\/\\ \\L\\ \\/\\ \\/\\ \\/\\ \\ \\ \\L\\ \\/\\  __/\\ \\ \\/ \n" +
+            "   \\ \\____/\\ \\____/\\ \\_\\ \\_\\ \\_\\ \\_,__/\\ \\____\\\\ \\_\\ \n" +
+            "    \\/___/  \\/___/  \\/_/\\/_/\\/_/\\/___/  \\/____/ \\/_/ \n" +
+            "                                                     ";
     @Override
     public Integer[] sort(Integer[] arr) {
         return quickSort(arr, 0, arr.length - 1);
